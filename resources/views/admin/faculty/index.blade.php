@@ -4,7 +4,13 @@
 @section('content')
 <div class="container">
 
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1">
 
+  <?= link_to('admin.faclty.create',$title="เพิ่มข้มูลคณะ" ,['class'=>'btn btn-primary'],$secure=null); ?>
+  </div>
+</div>
+<div class="card mt-3">
 <table class="table">
     <thead>
       <tr>

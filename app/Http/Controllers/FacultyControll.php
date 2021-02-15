@@ -14,10 +14,8 @@ class FacultyControll extends Controller
      */
     public function index()
     {
-        $faculty=faculty::all();
-        $count=Faculty::count();
-        return view('faculty.index',['faculty_name'=>$faculty,'count'=>$count]);
-
+   
+        return view('admin.faculty.index');
     }
 
     /**
