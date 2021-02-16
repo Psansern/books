@@ -19,4 +19,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('faculty','FacultyControll@index')->name('faculty');
+Route::get('faculty','FacultyController@index')->name('faculty');
+Route::get('newfaculty','FacultyController@create')->name('newfaculty');
+//Route::get('create','MajorController@create')->name('create');

@@ -6,8 +6,7 @@
 
 <div class="row">
   <div class="col-lg-10 col-lg-offset-1">
-
-  <?= link_to('admin.faclty.create',$title="เพิ่มข้มูลคณะ" ,['class'=>'btn btn-primary'],$secure=null); ?>
+    <a class="btn btn-primary" href="{{ route('newfaculty') }}">เพิ่มข้อมูลคณะ</a>
   </div>
 </div>
 <div class="card mt-3">

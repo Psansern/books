@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Faculty;
 
-class FacultyControll extends Controller
+
+class FacultyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,6 @@ class FacultyControll extends Controller
      */
     public function index()
     {
-   
         return view('admin.faculty.index');
     }
 
@@ -25,24 +24,19 @@ class FacultyControll extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.faculty.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resourced in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'faculty_code'=>'required',
-            'faculty_name'=>'required',
-        ]);
-        Faculty::create($request->all());
-        return redirect()->route('faculty.index')
-        -> with('success','เพิ่มข้อมูลคณะเรียบร้อย');
+        'faculty_code'=>'required',
+        'faculty_name'=>'required'
     }
 
     /**
