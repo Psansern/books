@@ -37,7 +37,7 @@
                             <a class="nav-link" href="{{ url('faculty') }}">คณะ</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#">สาขาวิชา</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">Features</a>

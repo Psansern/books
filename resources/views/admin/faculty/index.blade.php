@@ -14,30 +14,24 @@
     <thead>
       <tr>
         <th scope="col">NO</th>
+        <th scope="col">รหัสคณะ</th>
         <th scope="col">รายชื่อคณะ</th>
-        <th scope="col">33</th>
-        <th scope="col">Handle</th>
+        <th scope="col">mask</th>
       </tr>
     </thead>
     <tbody>
+      @foreach ($facultys as $fac)
+          
+    
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">{{ $fac->id }}</th>
+        <td>{{ $fac->faculty_code }}</td>
+        <td>{{ $fac->faculty_name}}</td>
+        <td>-</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      @endforeach
     </tbody>
+    
   </table>
 </div>
 @endsection
