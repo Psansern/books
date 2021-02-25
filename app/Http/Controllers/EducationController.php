@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Major;
-use App\Faculty;
-class MajorController extends Controller
+use App\Education;
+
+class EducationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,14 +13,8 @@ class MajorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {/*
-        $facultys=faculty::all();
-
-        return view('admin.major.index',compact('facultys'));
-    */
-       $majors=Major::latest()->paginate(5);
-       return view('admin.major.index',compact('majors'))
-       ->with('i',(request()->input('page',1)-1)*5);
+    {
+        return view ('admin.education.edu');
     }
 
     /**
@@ -30,8 +24,7 @@ class MajorController extends Controller
      */
     public function create()
     {
-        $facultys=faculty::all();
-        return view('admin.major.create',compact('facultys'));
+        //
     }
 
     /**
@@ -42,14 +35,10 @@ class MajorController extends Controller
      */
     public function store(Request $request)
     {
-       $request->validate([
-           'faculty_id'=>'required',
-           'major_name'=>'required'
-       ]);
-       Major::create($request->all());
-       return redirect()->route('major.index')->with('success','เพิ่มข้อมูลสาขาเรียบร้อยแล้ว');
-
-
+        $request->validate([
+            'edu_name'=>'required',
+            'edu_short_name'=>'required'
+        ]);
     }
 
     /**
@@ -69,10 +58,9 @@ class MajorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Major $major)
+    public function edit($id)
     {
-        $facultys=faculty::all();
-      return view('admin.major.edit',compact('major','facultys'));
+        //
     }
 
     /**
@@ -93,10 +81,8 @@ class MajorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Major $major)
+    public function destroy($id)
     {
-     $major->delete();
-     return redirect()->route('major.index')
-     ->with('success','major DELETE Successfully');
+        //
     }
 }

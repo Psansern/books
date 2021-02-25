@@ -16,7 +16,6 @@ class CreateEducationHistoryTable extends Migration
         Schema::create('education_history', function (Blueprint $table) {
             $table->increments('id');
             $table->strings('level');
-            
             $table->increments('teacher_id')->unsigned();
             $table->foreign('teacher_id')->references('id')->on('teacher');
             $table->timestamps();

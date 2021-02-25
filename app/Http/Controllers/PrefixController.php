@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Prefix;
 
 class PrefixController extends Controller
 {
@@ -13,7 +14,11 @@ class PrefixController extends Controller
      */
     public function index()
     {
-        //
+        $pfix=Prefix::latest()->paginate(5);
+        return view('admin.prefix.index',compact('pfix'))
+        ->with('i',(request()->input('page',1)-1)*5);
+
+    //return view('admin.prefix.index');
     }
 
     /**
@@ -23,7 +28,7 @@ class PrefixController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.prefix.create');
     }
 
     /**
@@ -34,7 +39,12 @@ class PrefixController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'prefix'=>'required'
+
+        ]);
+        Prefix::create($request->all());
+        return redirect()->route('prefix.index')->with('success','เพิ่มข้อมูลสาขาเรียบร้อยแล้ว');
     }
 
     /**

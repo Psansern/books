@@ -37,10 +37,10 @@
                             <a class="nav-link" href="{{ url('faculty') }}">คณะ</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">สาขาวิชา</a>
+                            <a class="nav-link" href="{{ route('major.index') }}">สาขาวิชา</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#">ตำแหน่งวิชาการ</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">Features</a>
@@ -50,10 +50,10 @@
                                 การตั้งค่า <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">คำนำหน้าชื่อ</a></li>
-                                <li><a class="dropdown-item" href="#">วุฒิการศึกษา</a></li>
+                                <li><a class="dropdown-item" href="{{ route('prefix.create') }}">คำนำหน้าชื่อ</a></li>
+                                <li><a class="dropdown-item" href="{{ route('education.index') }}">วุฒิการศึกษา</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="{{ route('position.index') }}">ตำแหน่งวิชาการ</a></li>
                               </ul>
                     </ul>
 

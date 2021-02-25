@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Prefix extends Model
+class Education extends Model
 {
-    protected $table='prefix';
     protected $fillable=[
-        'prefix'];
-
+        'edu_name',
+        'edu_short_name'
+    ];
 }

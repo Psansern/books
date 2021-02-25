@@ -11,4 +11,11 @@ class Faculty extends Model
      'faculty_code',
      'faculty_name'
  ];
-}
+ public function majors(){
+     return $this->hasMany(Major::class);
+ }
+
+ }
+
+
+

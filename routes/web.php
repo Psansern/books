@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\EducationController;
+
 Route::get('/', function () {
    // return view('welcome');
    return view('main');
@@ -21,4 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('faculty','FacultyController@index')->name('faculty');
 Route::get('newfaculty','FacultyController@create')->name('newfaculty');
-//Route::get('create','MajorController@create')->name('create');
+Route::resource('major','MajorController');
+Route::resource('position','AcPositionController');
+Route::resource('education','EducationController');
+Route::resource('prefix','PrefixController');
