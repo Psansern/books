@@ -1,6 +1,5 @@
 @extends('admin.mainAdmin')
 
-
 @section('content')
 <div class="container">
     @if (session('status'))
@@ -10,7 +9,7 @@
 @endif
 <div class="row">
   <div class="col-lg-6 col-lg-offset-1">
-    <a class="btn btn-primary" href="{{ route('prefix.create') }}">เพิ่มข้อมูล</a>
+    <a class="btn btn-primary" href="{{ route('education.create') }}">เพิ่มข้อมูล</a>
   </div>
 </div>
 <div class="card mt-6">
@@ -18,20 +17,19 @@
     <thead class="table table-success table-striped">
       <tr>
         <th scope="col">NO</th>
-        <th scope="col">คำนำหน้า</th>
+        <th scope="col">ชื่อวุฒิการศึกษา</th>
+        <th scope="col">ชื่อย่อวุฒิ</th>
         <th scope="col">Action</th>
-
       </tr>
     </thead>
     <tbody>
-      @foreach ($pfix as $prefix)
-
-
+      @foreach ($education as $edu)
       <tr>
-        <th scope="row">{{ $prefix->id }}</th>
-        <td>{{ $prefix->prefix }}</td>
+        <th scope="row">{{ $edu->id }}</th>
+        <td>{{ $edu->edu_name }}</td>
+        <td>{{ $edu->edu_short_name }}</td>
         <td>
-            <form action="{{ route('prefix.destroy',$prefix->id) }}" method="POST">
+            <form action="{{ route('education.destroy',$edu->id) }}" method="POST">
 
             <a class="btn btn-success" href="#" role="button">แก้ไข</a>
             @csrf
@@ -39,8 +37,6 @@
           <button type="submit" class="btn btn-danger">ลบ</button>
             </form>
         </td>
-
-
       </tr>
       @endforeach
     </tbody>
@@ -48,5 +44,5 @@
   </table>
 
 </div>
-{!! $pfix->render() !!}
+{!! $education->render() !!}
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\AcPosition;
 
 class AcPositionController extends Controller
 {
@@ -12,8 +13,12 @@ class AcPositionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        return view('admin.position.index');
+        $Acposition=AcPosition::paginate(5);
+        return view('admin.position.index',compact('Acposition'))
+        ->with('i',(request()->input('page',1)-1)*5);
+
     }
 
     /**
@@ -23,7 +28,7 @@ class AcPositionController extends Controller
      */
     public function create()
     {
-        //
+     return view('admin.position.create');
     }
 
     /**
@@ -34,7 +39,15 @@ class AcPositionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'aca_position_th'=>'required',
+            'aca_position_short_th'=>'required'
+
+        ]);
+
+      AcPosition::create($request->all());
+        return redirect()->route('position.index')->with('success','เพิ่มข้อมูลตำแหน่งวิชาการเรียบร้อย');
     }
 
     /**

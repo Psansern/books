@@ -9,13 +9,13 @@
                 <div class="card-header">{{ __('ตั้งค่าวุฒิการศึกษา ') }}</div>
 
                 <div class="card-body">
-<form action="" method="POST">
+<form action="{{ route('education.store') }}" method="POST">
     {{ csrf_field() }}
     <div class="form-group row">
         <label for="education_level" class="col-md-3 col-form-label text-md-left">{{ __('ระดับการศึกษา') }}</label>
 
         <div class="col-md-6">
-            <input id="education_level" type="text" class="form-control"  name="education_level" >
+            <input id="edu_name" type="text" class="form-control"  name="edu_name" >
 
         </div>
 
@@ -24,7 +24,7 @@
         <label for="edu_shot_name" class="col-md-3 col-form-label text-md-left">{{ __('ชื่อย่อวุฒิการศึกษา') }}</label>
 
         <div class="col-md-6">
-            <input id="pedu_shot_name" type="text" class="form-control"  name="edu_shot_name" >
+            <input id="pedu_short_name" type="text" class="form-control"  name="edu_short_name" >
 
         </div>
 

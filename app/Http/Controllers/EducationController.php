@@ -14,7 +14,9 @@ class EducationController extends Controller
      */
     public function index()
     {
-        return view ('admin.education.edu');
+        $education=Education::latest()->paginate(5);
+        return view('admin.education.index',compact('education'))
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
@@ -24,7 +26,7 @@ class EducationController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.education.create');
     }
 
     /**
@@ -38,7 +40,11 @@ class EducationController extends Controller
         $request->validate([
             'edu_name'=>'required',
             'edu_short_name'=>'required'
+
         ]);
+
+        Education::create($request->all());
+        return redirect()->route('education.index')->with('success','เพิ่มข้อมูลสาขาเรียบร้อยแล้ว');
     }
 
     /**
@@ -81,8 +87,10 @@ class EducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Education $education)
     {
-        //
+        $education->delete();
+        return redirect()->route('education.index')
+        ->with('success','education DELETE Successfully');
     }
 }

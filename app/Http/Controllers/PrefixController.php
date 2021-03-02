@@ -14,7 +14,7 @@ class PrefixController extends Controller
      */
     public function index()
     {
-        $pfix=Prefix::latest()->paginate(5);
+        $pfix=Prefix::paginate(5);
         return view('admin.prefix.index',compact('pfix'))
         ->with('i',(request()->input('page',1)-1)*5);
 
@@ -87,8 +87,10 @@ class PrefixController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Prefix $prefix)
     {
-        //
+        $prefix->delete();
+        return redirect()->route('prefix.index')
+        ->with('success','prefix DELETE Successfully');
     }
 }

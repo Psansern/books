@@ -16,9 +16,7 @@ class CreateAcademicPositionTable extends Migration
         Schema::create('academic_position', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('aca_position_th');
-            $table->string('aca_position_en');
             $table->string('aca_position_short_th');
-            $table->string('aca_position_short_en');
             $table->timestamps();
         });
     }

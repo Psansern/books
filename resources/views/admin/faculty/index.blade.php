@@ -21,17 +21,17 @@
     </thead>
     <tbody>
       @foreach ($facultys as $fac)
-          
-    
+
+
       <tr>
         <th scope="row">{{ $fac->id }}</th>
         <td>{{ $fac->faculty_code }}</td>
-        <td>{{ $fac->faculty_name}}</td>
+        <td><a href="{{ route('faculty.show',$fac->id) }}"> {{ $fac->faculty_name}}</a></td>
         <td>-</td>
       </tr>
       @endforeach
     </tbody>
-    
+
   </table>
 </div>
 @endsection

@@ -13,11 +13,8 @@ class MajorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {/*
-        $facultys=faculty::all();
+    {
 
-        return view('admin.major.index',compact('facultys'));
-    */
        $majors=Major::latest()->paginate(5);
        return view('admin.major.index',compact('majors'))
        ->with('i',(request()->input('page',1)-1)*5);
@@ -48,8 +45,6 @@ class MajorController extends Controller
        ]);
        Major::create($request->all());
        return redirect()->route('major.index')->with('success','เพิ่มข้อมูลสาขาเรียบร้อยแล้ว');
-
-
     }
 
     /**
@@ -58,9 +53,11 @@ class MajorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(major $major)
     {
-        //
+        $allcourse=Major::where('faculty_id','=','$major')->get();
+        return view('admin.major.show',compact('allcourse'));
+
     }
 
     /**

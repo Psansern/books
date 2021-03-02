@@ -39,18 +39,25 @@
                           <li class="nav-item">
                             <a class="nav-link" href="{{ route('major.index') }}">สาขาวิชา</a>
                           </li>
+                          <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                หมวดอาจารย์<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="">อ.ประจำหลักสูตร</a></li>
+                                <li><a class="dropdown-item" href="">เพิ่มอ.ประจำหลักสูตร</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="">อ.ไม่ตรงเกณฑ์</a></li>
+                              </ul>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">ตำแหน่งวิชาการ</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href={{ route('course.index') }}>หลักสูตร</a>
                           </li>
                           <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 การตั้งค่า <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('prefix.create') }}">คำนำหน้าชื่อ</a></li>
+                                <li><a class="dropdown-item" href="{{ route('prefix.index') }}">คำนำหน้าชื่อ</a></li>
                                 <li><a class="dropdown-item" href="{{ route('education.index') }}">วุฒิการศึกษา</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{ route('position.index') }}">ตำแหน่งวิชาการ</a></li>

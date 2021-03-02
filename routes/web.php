@@ -21,9 +21,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('faculty','FacultyController@index')->name('faculty');
+Route::resource('faculty','FacultyController');
 Route::get('newfaculty','FacultyController@create')->name('newfaculty');
 Route::resource('major','MajorController');
 Route::resource('position','AcPositionController');
 Route::resource('education','EducationController');
 Route::resource('prefix','PrefixController');
+Route::resource('course','CourseController');

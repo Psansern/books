@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Faculty;
-use App\Major;
-
-
-class FacultyController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +13,7 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $facultys=faculty::all();
-
-        return view('admin.faculty.index',compact('facultys'));
+        //
     }
 
     /**
@@ -29,18 +23,18 @@ class FacultyController extends Controller
      */
     public function create()
     {
-        return view('admin.faculty.create');
+        return view('admin.course.create');
     }
 
     /**
-     * Store a newly created resourced in storage.
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -49,13 +43,9 @@ class FacultyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($fac)
+    public function show($id)
     {
-
-        $major=Major::wherefaculty_id($fac)->get();
-        return view('admin.faculty.show',compact('major'));
-
-           // return view ('admin.faculty.show');
+        //
     }
 
     /**

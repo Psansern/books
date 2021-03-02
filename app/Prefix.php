@@ -8,6 +8,6 @@ class Prefix extends Model
 {
     protected $table='prefix';
     protected $fillable=[
-        'prefix'];
+        'id','prefix'];
 
 }
