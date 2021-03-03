@@ -55,7 +55,7 @@ class FacultyController extends Controller
         $major=Major::wherefaculty_id($fac)->get();
         return view('admin.faculty.show',compact('major'));
 
-           // return view ('admin.faculty.show');
+
     }
 
     /**

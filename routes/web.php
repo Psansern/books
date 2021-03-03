@@ -27,4 +27,6 @@ Route::resource('major','MajorController');
 Route::resource('position','AcPositionController');
 Route::resource('education','EducationController');
 Route::resource('prefix','PrefixController');
-Route::resource('course','CourseController');
+
+Route::get('/admin/course/create/{id}','CourseController@create');
+

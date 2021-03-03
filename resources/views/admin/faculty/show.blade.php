@@ -8,11 +8,14 @@
 
     <tr>
         <td><b> สาขาวิชา</b></td>
+        <td><b> รหัสสาขา</b></td>
+        <td><b> รหัสคณะ</b></td>
     </tr>
-@foreach ($major as $item)
+@foreach ($major as $show)
 <tr>
-    <td><a href="{{ route('course.create') }}"> {{$item->major_name }}</a></td>
-    <td>{{ $item->id }}</td>
+    <td><a href="{{url('admin/course/create',$show->id)}}"> {{$show->major_name }}</a></td>
+    <td>{{ $show->id}}</td>
+
 </tr>
 @endforeach
 </table>

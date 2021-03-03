@@ -50,7 +50,7 @@
                                 <li><a class="dropdown-item" href="">อ.ไม่ตรงเกณฑ์</a></li>
                               </ul>
                           <li class="nav-item">
-                            <a class="nav-link" href={{ route('course.index') }}>หลักสูตร</a>
+                            <a class="nav-link" href="#">หลักสูตร</a>
                           </li>
                           <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

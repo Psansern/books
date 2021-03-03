@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Major;
+use App\Course;
+use App\Faculty;
 
 class CourseController extends Controller
 {
@@ -21,9 +24,11 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('admin.course.create');
+        //$facid=Major::select('faculty_id')->where('id','=',$id)->get();
+        $facid=Major::select('faculty_id')->find($id);
+            return view('admin.course.create',compact('id','facid'));
     }
 
     /**
