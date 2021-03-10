@@ -44,7 +44,7 @@
                                 หมวดอาจารย์<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">อ.ประจำหลักสูตร</a></li>
+                                <li><a class="dropdown-item" href="{{ route('teacher.index') }}">อ.ประจำหลักสูตร</a></li>
                                 <li><a class="dropdown-item" href="">เพิ่มอ.ประจำหลักสูตร</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="">อ.ไม่ตรงเกณฑ์</a></li>
